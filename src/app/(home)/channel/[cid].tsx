@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 import { ActivityIndicator, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Channel as ChannelType, StreamChat } from 'stream-chat';
-import { Channel, ChannelList, MessageInput, MessageList, useChatContext } from 'stream-chat-expo';
+import { Channel, ChannelList, MessageInput, MessageList, Thread, useChatContext } from 'stream-chat-expo';
 
 export default function ChannelScreen() {
      const [channel, setChannel] = useState<ChannelType | null>();
+     const [thread, setThread] = useState<ChannelType | null>();
      const {cid} = useLocalSearchParams<{ cid: string }>();
 
 
@@ -25,12 +26,15 @@ export default function ChannelScreen() {
           return <ActivityIndicator />
      }
 
+   
      return (
-          <Channel channel={channel}> 
+          <Channel channel={channel} > 
               <MessageList />
               <SafeAreaView edges={['bottom']}>
               <MessageInput />
               </SafeAreaView>
           </Channel>
       )
+
+
 }
