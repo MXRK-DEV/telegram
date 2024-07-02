@@ -9,8 +9,11 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "1.23.1",
     "@react-native-community/netinfo": "11.3.1",
+    "@rneui/themed": "^4.0.0-rc.8",
     "@stream-io/flat-list-mvcp": "^0.10.3",
+    "@supabase/supabase-js": "^2.44.2",
     "@types/react": "~18.2.79",
     "expo": "~51.0.14",
     "expo-constants": "~16.0.2",
