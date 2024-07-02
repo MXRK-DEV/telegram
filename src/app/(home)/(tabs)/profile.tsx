@@ -4,6 +4,10 @@ import { StyleSheet, View, Alert } from 'react-native'
 import { Button, Input } from '@rneui/themed'
 import { Session } from '@supabase/supabase-js'
 import { useAuth } from '../../../providers/AuthProvider'
+import Avatar from '../../../components/Avatar'
+import { ScrollView } from 'react-native'
+
+
 
 export default function ProfileScreen() { 
     const { session } = useAuth()
@@ -86,7 +90,20 @@ export default function ProfileScreen() {
   }
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
+    
+    <View style={{ alignItems: 'center' }}>
+      <Avatar
+        size={200}
+        url={avatarUrl}
+        onUpload={(url: string) => {
+          setAvatarUrl(url)
+          updateProfile({ username, website, avatar_url: url, full_name: fullName })
+        }}
+      />
+    </View>
+
+
       <View style={[styles.verticallySpaced, styles.mt20]}>
         <Input label="Email" value={session?.user?.email} disabled />
       </View>
@@ -111,7 +128,7 @@ export default function ProfileScreen() {
       <View style={styles.verticallySpaced}>
         <Button title="Sign Out" onPress={() => supabase.auth.signOut()} />
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
