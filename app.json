@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "telegram",
-    "slug": "telegram",
+    "name": "Chat-app",
+    "slug": "chat-app",
+    "description": "This is a basic chat application.",
     "scheme": "myTelegram",
     "version": "1.0.0",
     "orientation": "portrait",
