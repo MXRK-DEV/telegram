@@ -1,17 +1,14 @@
 import { Redirect } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { LogBox, StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
+  LogBox.ignoreAllLogs()
     return (
         <Redirect href={"/(auth)/login"} />
     )
-//   return (
-//     <View style={styles.container}>
-//       <Text>Jaiye lo!</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
+
+
 }
 
 const styles = StyleSheet.create({

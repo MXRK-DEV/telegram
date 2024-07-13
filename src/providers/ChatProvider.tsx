@@ -26,14 +26,16 @@ export default function ChatProvider({children}: PropsWithChildren) {
                .getPublicUrl(profile.avatar_url).data.publicUrl,
 
              },
-             client.devToken(profile.id)
+             client.devToken(profile.id) 
            );
            setIsReady(true);
+          
           
              // const channel = client.channel('messaging', 'the_park', {
              // name: 'The Park',
              //     });
              //     await channel.watch();
+             []
         } 
   
         connect();
@@ -65,4 +67,3 @@ export default function ChatProvider({children}: PropsWithChildren) {
     )
 }
 
-// 8bZQIDYJrQUU9zA3
